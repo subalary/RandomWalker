@@ -11,6 +11,8 @@ clf
 num_iterations = 100;
 % set 2 or 3 directions (2 = (x,y), 3 = (x,y,z))
 directions = 3;
+% update on increment = 1, plot graph at  the end only = 0
+incrementPlot = 0;
 % create x and y positions, set all to 0
 x = zeros(1,num_iterations+1);
 y = zeros(1,num_iterations+1);
@@ -65,10 +67,16 @@ for i=2:(num_iterations+1)
 	xposition(i) = x(i);
 	yposition(i) = y(i);
 	% plotting - update plot on each iteration. Comment next three lines to plot at the end only.
+	if incrementPlot==1
+		plot(xposition, yposition, 'black')
+		colormap(jet)
+		title(sprintf('The random walk with %.0f iterations', num_iterations))
+		drawnow
+	end
+end
+
+%% PLOTTING - uncomment this to only plot at the end of the simulation
+if incrementPlot==0
 	plot(xposition, yposition, 'black')
 	title(sprintf('The random walk with %.0f iterations', num_iterations))
-	drawnow
 end
-%% PLOTTING - uncomment this to only plot at the end of the simulation
-%plot(xposition, yposition, 'black')
-%title(sprintf('The random walk with %.0f iterations', num_iterations))
