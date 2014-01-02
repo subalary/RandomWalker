@@ -66,7 +66,6 @@ for i=2:(num_iterations+1)
 	yposition(i) = y(i);
 	% plotting - update plot on each iteration. Comment next three lines to plot at the end only.
 	plot(xposition, yposition, 'black')
-	colormap(jet)
 	title(sprintf('The random walk with %.0f iterations', num_iterations))
 	drawnow
 end
