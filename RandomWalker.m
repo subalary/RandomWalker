@@ -66,7 +66,7 @@ for i=2:(num_iterations+1)
 	% record positions
 	xposition(i) = x(i);
 	yposition(i) = y(i);
-	% plotting - update plot on each iteration. Comment next three lines to plot at the end only.
+	% plotting - update plot on each iteration. 
 	if incrementPlot==1
 		plot(xposition, yposition, 'black')
 		title(sprintf('The random walk with %.0f iterations', num_iterations))
@@ -74,7 +74,7 @@ for i=2:(num_iterations+1)
 	end
 end
 
-%% PLOTTING - uncomment this to only plot at the end of the simulation
+%% PLOTTING - final state only
 if incrementPlot==0
 	plot(xposition, yposition, 'black')
 	title(sprintf('The random walk with %.0f iterations', num_iterations))
